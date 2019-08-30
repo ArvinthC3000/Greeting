@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+        function greetApp(){
+            var greet = new Date();
+            var h = greet.getHours();
+            var m = greet.getMinutes();
+            var s = greet.getSeconds();
+            m = digit(m);
+            s = digit(s);
+            document.getElementById('date').innerHTML = 
+            h + ":" + m + ":" + s ;
+            if((h>5 && h<12)){
+            document.getElementById('salutation').innerHTML = "Good Morning boss!" ;}
+            else if(h>=12 && h<17)
+            document.getElementById('salutation').innerHTML = "Good Afternoon boss!" ;
+            else if(h>=17 && h<22)
+            document.getElementById('salutation').innerHTML = "Good Evening boss!" ;
+            else
+            document.getElementById('salutation').innerHTML = "Good night boss!" ;
+            document.getElementById('escape').innerHTML = " Time is";
+            
+
+            var t = setTimeout(greetApp , 0);
+        
+        }
+        function salutation(){
+
+        }
+        
+    function digit(i){
+        if (i < 10) {i = "0" + i };
+        return i;
+    }    
+
+</script>
+<style>
+    .general{
+        background-color: crimson;
+        margin: 5% 25% 90% 25%;
+        padding: 10%;
+    }
+    .timeColor{
+        color :blue;
+        font-family:serif ;
+        font-size: 5em;
+    }
+    .sal{
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2em;
+    }
+    .sub{
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1em;
+    }
+
+</style>
+</head>
+<body onload="greetApp()" class="general">
+Weather app
+        <div id = salutation class="sal"> </div>
+        <div id="escape" class="sub"></div>
+    <div id  = "date" class="timeColor"></div>
+</body>
+</html>
